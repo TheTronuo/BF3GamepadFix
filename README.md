@@ -16,12 +16,32 @@ Gamepad controls and Xbox 360 / PlayStation button prompts for the **Battlefield
 <table width="100%">
   <tr>
     <td width="50%" align="center">
-      <a href="https://raw.githubusercontent.com/tronuo0/BF3GamepadFix/main/assets/screenshots/xbox360-prompts.png" target="_blank" rel="noopener noreferrer"><img src="assets/screenshots/xbox360-prompts-preview.webp" alt="Battlefield 3 campaign with Xbox 360 RT, LT and X button prompts" width="100%"></a>
-      <br><em>Xbox 360 Prompts</em>
+      <a href="https://raw.githubusercontent.com/tronuo0/BF3GamepadFix/main/assets/screenshots/xbox360-infantry.png" target="_blank" rel="noopener noreferrer"><img src="assets/screenshots/xbox360-infantry-preview.webp" alt="Battlefield 3 weapon controls tutorial with Xbox 360 controls" width="100%"></a>
+      <br><em>Xbox 360</em>
     </td>
     <td width="50%" align="center">
-      <a href="https://raw.githubusercontent.com/tronuo0/BF3GamepadFix/main/assets/screenshots/playstation-prompts.png" target="_blank" rel="noopener noreferrer"><img src="assets/screenshots/playstation-prompts-preview.webp" alt="Battlefield 3 campaign with PlayStation 3 R2, L2 and Square button prompts" width="100%"></a>
-      <br><em>PlayStation 3 Prompts</em>
+      <a href="https://raw.githubusercontent.com/tronuo0/BF3GamepadFix/main/assets/screenshots/playstation3-infantry.png" target="_blank" rel="noopener noreferrer"><img src="assets/screenshots/playstation3-infantry-preview.webp" alt="Battlefield 3 weapon controls tutorial with PlayStation 3 controls" width="100%"></a>
+      <br><em>PlayStation 3</em>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <a href="https://raw.githubusercontent.com/tronuo0/BF3GamepadFix/main/assets/screenshots/xbox360-qte.png" target="_blank" rel="noopener noreferrer"><img src="assets/screenshots/xbox360-qte-preview.webp" alt="Battlefield 3 knife QTE with Xbox 360 controls" width="100%"></a>
+      <br><em>Xbox 360</em>
+    </td>
+    <td width="50%" align="center">
+      <a href="https://raw.githubusercontent.com/tronuo0/BF3GamepadFix/main/assets/screenshots/playstation3-qte.png" target="_blank" rel="noopener noreferrer"><img src="assets/screenshots/playstation3-qte-preview.webp" alt="Battlefield 3 knife QTE with PlayStation 3 controls" width="100%"></a>
+      <br><em>PlayStation 3</em>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <a href="https://raw.githubusercontent.com/tronuo0/BF3GamepadFix/main/assets/screenshots/xbox360-tank.png" target="_blank" rel="noopener noreferrer"><img src="assets/screenshots/xbox360-tank-preview.webp" alt="Battlefield 3 tank controls tutorial with Xbox 360 controls" width="100%"></a>
+      <br><em>Xbox 360</em>
+    </td>
+    <td width="50%" align="center">
+      <a href="https://raw.githubusercontent.com/tronuo0/BF3GamepadFix/main/assets/screenshots/playstation3-tank.png" target="_blank" rel="noopener noreferrer"><img src="assets/screenshots/playstation3-tank-preview.webp" alt="Battlefield 3 tank controls tutorial with PlayStation 3 controls" width="100%"></a>
+      <br><em>PlayStation 3</em>
     </td>
   </tr>
 </table>
@@ -54,16 +74,6 @@ PromptStyle=Xbox360
 | `PS3` | PlayStation 3 |
 
 This changes the button icons; controls use XInput in both modes. PlayStation controllers must be available to the game through XInput.
-
-## Uninstall
-
-Close the game. Open PowerShell in the folder containing the downloaded EXE and run the following command, replacing the game path with your folder containing `bf3.exe`:
-
-```powershell
-.\BF3GamepadFix.exe remove "C:\Games\Battlefield 3"
-```
-
-This restores the archives and loader from before installation. Keep `ControllerMod/BF3GamepadFix` in the game folder until you uninstall; it contains the restore record and previous loader. The downloaded EXE contains the required patch data.
 
 ## Credits
 
