@@ -4,6 +4,7 @@
 | :--- | :---: |
 | **Xbox 360 Prompts** | ✅ Supported |
 | **PlayStation 3 Prompts** | ✅ Supported |
+| **QTE Controls & Prompts** | ✅ Supported |
 | **Game Version** | Build **1147186** |
 
 Gamepad controls and Xbox 360 / PlayStation button prompts for the **Battlefield 3 single-player campaign on PC**. Keeps the PC menus and graphics settings, with UI scaling included.
