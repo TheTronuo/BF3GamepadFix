@@ -1,0 +1,2 @@
+EXPORTS
+    getBuildInfo=build_info_wrapper

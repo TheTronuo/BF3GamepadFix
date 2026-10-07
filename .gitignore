@@ -1,0 +1,13 @@
+/build*/
+/artifacts/
+/.vs/
+*.obj
+*.pdb
+*.ilk
+*.lib
+*.exp
+*.dll
+*.exe
+*.original
+*.patched
+*.dmp

@@ -1,0 +1,6 @@
+* text=auto
+*.cpp text eol=lf
+*.hpp text eol=lf
+*.inc text eol=lf
+*.def text eol=lf
+*.md text eol=lf

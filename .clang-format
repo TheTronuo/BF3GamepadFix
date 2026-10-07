@@ -1,0 +1,16 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+ColumnLimit: 100
+PointerAlignment: Left
+AllowShortFunctionsOnASingleLine: InlineOnly
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+FixNamespaceComments: true
+SortIncludes: CaseSensitive
+IncludeCategories:
+  - Regex: '^<windows\.h>$'
+    Priority: -10
+  - Regex: '^"bf3/'
+    Priority: 1
+  - Regex: '.*'
+    Priority: 2
