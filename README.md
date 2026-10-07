@@ -2,8 +2,8 @@
 
 | Feature | Status |
 | :--- | :---: |
-| **PlayStation Prompts** | ✅ Supported |
 | **Xbox 360 Prompts** | ✅ Supported |
+| **PlayStation 3 Prompts** | ✅ Supported |
 | **Game Version** | Build **1147186** |
 
 Gamepad controls and Xbox 360 / PlayStation button prompts for the **Battlefield 3 single-player campaign on PC**. Keeps the PC menus and graphics settings, with UI scaling included.
@@ -13,15 +13,18 @@ Gamepad controls and Xbox 360 / PlayStation button prompts for the **Battlefield
 <details>
 <summary><strong>In-game preview — click to expand</strong><br><br></summary>
 
-<p align="center">
-  <img src="assets/screenshots/playstation-prompts.png" alt="Battlefield 3 campaign with PlayStation R2, L2 and Square button prompts" width="960">
-  <br><em>PlayStation prompts</em>
-</p>
-
-<p align="center">
-  <img src="assets/screenshots/xbox360-prompts.png" alt="Battlefield 3 campaign with Xbox 360 RT, LT and X button prompts" width="960">
-  <br><em>Xbox 360 prompts</em>
-</p>
+<table width="100%">
+  <tr>
+    <td width="50%" align="center">
+      <a href="assets/screenshots/xbox360-prompts.png"><img src="assets/screenshots/xbox360-prompts.png" alt="Battlefield 3 campaign with Xbox 360 RT, LT and X button prompts" width="100%"></a>
+      <br><em>Xbox 360 Prompts</em>
+    </td>
+    <td width="50%" align="center">
+      <a href="assets/screenshots/playstation-prompts.png"><img src="assets/screenshots/playstation-prompts.png" alt="Battlefield 3 campaign with PlayStation 3 R2, L2 and Square button prompts" width="100%"></a>
+      <br><em>PlayStation 3 Prompts</em>
+    </td>
+  </tr>
+</table>
 
 </details>
 
@@ -46,7 +49,7 @@ PromptStyle=Xbox360
 | Value | Button prompts |
 | :--- | :--- |
 | `Xbox360` | Xbox 360 (default) |
-| `PS3` | PlayStation |
+| `PS3` | PlayStation 3 |
 
 This changes the button icons; controls use XInput in both modes. PlayStation controllers must be available to the game through XInput.
 
