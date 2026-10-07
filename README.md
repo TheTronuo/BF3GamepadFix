@@ -10,8 +10,7 @@ Gamepad controls and Xbox 360 / PlayStation button prompts for the **Battlefield
 
 **Version 0.22.3 is a pre-release.** Both prompt styles have been confirmed in gameplay; full campaign verification is ongoing.
 
-<details>
-<summary><strong>In-game preview — click to expand</strong><br><br></summary>
+## In-game preview
 
 <table width="100%">
   <tr>
@@ -25,8 +24,6 @@ Gamepad controls and Xbox 360 / PlayStation button prompts for the **Battlefield
     </td>
   </tr>
 </table>
-
-</details>
 
 ## Install
 
