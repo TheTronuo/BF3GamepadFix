@@ -38,6 +38,7 @@ avoids that deployment step. Windows CNG supplies hashing; no crypto package is 
 ```powershell
 cmake -S . -B build-all -A Win32 `
   -DBF3_MINHOOK_SOURCE_DIR=C:/deps/minhook `
+  -DBF3_PACKAGE_DIR=C:/PrivateFixtures/BF3GamepadFix `
   -DZLIB_INCLUDE_DIR=C:/deps/zlib-1.3.1-x86/include `
   -DZLIB_LIBRARY=C:/deps/zlib-1.3.1-x86/lib/zlib.lib
 cmake --build build-all --config Release
@@ -103,21 +104,23 @@ need MinHook or zlib and uses only C++ sources:
 
 ```powershell
 cmake -S . -B build-installer -A x64 `
-  -DBF3_BUILD_RUNTIME=OFF -DBF3_BUILD_TOOLS=OFF
+  -DBF3_BUILD_RUNTIME=OFF -DBF3_BUILD_TOOLS=OFF `
+  -DBF3_PACKAGE_DIR=C:/PrivateFixtures/BF3GamepadFix
 cmake --build build-installer --config Release
 ctest --test-dir build-installer -C Release --output-on-failure
 ```
 
 `BF3_RELEASE_DLL_SHA256` pins the distribution DLL to the already tested 0.22.3
 binary. If distributing a newly rebuilt runtime, set that CMake cache value to
-its SHA256 before rebuilding the installer. Place the matching DLL under
-`BF3GamepadFix/runtime`, the default config under `BF3GamepadFix`, and the 38 XOR
-patch files under `BF3GamepadFix/patches`, beside `BF3GamepadFix.exe`.
+its SHA256 before rebuilding the installer. Prepare `BF3_PACKAGE_DIR` with the
+matching DLL under `runtime/`, the default config in its root, and the 38 XOR
+patch files under `patches/`. CMake embeds this package into the GUI executable;
+players need only the resulting EXE. See [GUI installer](gui-installer.md).
 
 Use `source/BF3Controller.ini` as the package's default config. Copy
 `docs/THIRD_PARTY_NOTICES.md` and the `docs/licenses/` directory to the package
-root, keeping the notices' relative `licenses/` links valid. The packaged file
-layout and the installed config path remain the same.
+root, keeping the notices' relative `licenses/` links valid. The package and license
+notices are embedded with the payload. The installed config stays next to `bf3.exe`.
 
 Each XOR patch has the stored resource's exact size and uses the filename
 `patched_file + ".xor"` from `release_0222.cpp`. Compute it from the supported

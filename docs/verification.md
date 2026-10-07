@@ -1,6 +1,19 @@
 # Verified results
 
-## Public pre-release package
+## 0.22.4 single-EXE installer
+
+The release embeds the existing verified 0.22.3 runtime and all 38 XOR patches in
+the GUI executable. The embedded-package test validates every file checksum,
+both prompt settings, preservation of unrelated INI keys and a failed write.
+The transaction and CLI fixture suites continue to verify install, rollback,
+exact restore, configuration preservation and rejection of altered input files.
+
+The GUI has been used to install on a local supported game. The compact layout,
+radio selection, icon repaint and disabled Installed button were reviewed locally.
+Full campaign coverage is ongoing. This installer change does not alter the
+runtime DLL, patched resources, user sensitivity or camera response settings.
+
+## 0.22.3 original ZIP package
 
 The publishable tree includes a standalone C++ installer in addition to the
 unchanged runtime and resource generator. Eight offline checks pass: four runtime

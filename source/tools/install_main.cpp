@@ -153,14 +153,16 @@ Bytes original_dll(const fs::path& game) {
 }
 } // namespace
 
-int wmain(int argc, wchar_t** argv) {
+void bf3_require_closed_game() { require_closed_game(); }
+
+int bf3_install_main(int argc, wchar_t** argv, const fs::path& embedded_package) {
     bool interactive = argc == 1;
     int result = 0;
     try {
         const auto directory = executable_directory();
         std::wstring action;
         if (interactive) {
-            std::cout << "BF3GamepadFix 0.22.3 pre-release\n"
+            std::cout << "BF3GamepadFix 0.22.4 pre-release\n"
                          "1 Install   2 Restore previous installation   3 Status\n> ";
             std::string choice;
             std::getline(std::cin, choice);
@@ -172,7 +174,7 @@ int wmain(int argc, wchar_t** argv) {
             throw std::runtime_error(
                 "Usage: BF3GamepadFix.exe install|remove|status [GAME_DIRECTORY]");
         const auto game = fs::weakly_canonical(argc == 3 ? fs::path(argv[2]) : directory);
-        const auto package = directory / "BF3GamepadFix";
+        const auto package = embedded_package.empty() ? directory / "BF3GamepadFix" : embedded_package;
         const auto state = setup::contained_path(game, "ControllerMod/BF3GamepadFix/state.ini");
         const auto previous =
             setup::contained_path(game, "ControllerMod/BF3GamepadFix/previous-loader.dll");
@@ -249,3 +251,9 @@ int wmain(int argc, wchar_t** argv) {
     }
     return result;
 }
+
+#ifndef BF3_GUI
+int wmain(int argc, wchar_t** argv) {
+    return bf3_install_main(argc, argv, {});
+}
+#endif

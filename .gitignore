@@ -11,3 +11,4 @@
 *.original
 *.patched
 *.dmp
+/assets/installer/*-reference*.png
