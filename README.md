@@ -52,6 +52,6 @@ This changes the button icons; controls use XInput in both modes. PlayStation co
 
 ## Credits
 
-Includes [BF3-UI-Scaling-Fix v1.04](https://github.com/IlIHydraIlI/BF3-UI-Scaling-Fix). A separate UI Scaling Fix installation is not required. See [third-party notices](THIRD_PARTY_NOTICES.md) for credits and licenses.
+Includes [BF3-UI-Scaling-Fix v1.04](https://github.com/IlIHydraIlI/BF3-UI-Scaling-Fix). A separate UI Scaling Fix installation is not required. See [third-party notices](docs/THIRD_PARTY_NOTICES.md) for credits and licenses.
 
 [Build instructions](docs/build.md) · [Verification details](docs/verification.md)

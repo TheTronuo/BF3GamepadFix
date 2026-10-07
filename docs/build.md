@@ -9,6 +9,10 @@ publishable source tree.
 Use MSVC and CMake on Windows. The DLL requires **Win32/x86**. Tools may use x86 or
 x64, provided the supplied zlib library has the same architecture.
 
+Run the commands below from the repository root. C++ implementation, headers,
+tools, tests and the default `BF3Controller.ini` are under `source/`. Documentation
+and third-party licenses are under `docs/`; screenshots remain under `assets/`.
+
 ## External dependencies
 
 `BF3_MINHOOK_SOURCE_DIR` points to an external MinHook directory containing:
@@ -22,7 +26,7 @@ src/hde/hde32.c
 ```
 
 CMake compiles those files as a separate C dependency. Project implementation files
-are C++. `licenses/MinHook.txt` retains the required notices.
+are C++. [MinHook's license](licenses/MinHook.txt) retains the required notices.
 
 The tools use zlib **1.3.1**. CMake accepts `ZLIB_INCLUDE_DIR` and `ZLIB_LIBRARY`,
 or an existing installation discoverable by `find_package(ZLIB)`. A shared zlib DLL
@@ -40,8 +44,26 @@ cmake --build build-all --config Release
 ctest --test-dir build-all -C Release --output-on-failure
 ```
 
-The two-build alternative is shown in the root README. It avoids requiring a
-32-bit zlib when only a 64-bit generator is wanted. Both configurations use the
+## Separate runtime and generator builds
+
+Use separate builds when only a 64-bit zlib is available:
+
+```powershell
+cmake -S . -B build-runtime -A Win32 `
+  -DBF3_BUILD_TOOLS=OFF -DBF3_BUILD_INSTALLER=OFF `
+  -DBF3_MINHOOK_SOURCE_DIR=C:/deps/minhook
+cmake --build build-runtime --config Release
+ctest --test-dir build-runtime -C Release --output-on-failure
+
+cmake -S . -B build-tools -A x64 `
+  -DBF3_BUILD_RUNTIME=OFF -DBF3_BUILD_INSTALLER=OFF `
+  -DZLIB_INCLUDE_DIR=C:/deps/zlib-1.3.1-x64/include `
+  -DZLIB_LIBRARY=C:/deps/zlib-1.3.1-x64/lib/zlib.lib
+cmake --build build-tools --config Release
+ctest --test-dir build-tools -C Release --output-on-failure
+```
+
+Replace the dependency paths with your local paths. Both configurations use the
 same release specification and tests.
 
 ## Optional private fixtures
@@ -68,7 +90,7 @@ original DLL there; synthetic CAS files are created only in that fixture.
 
 ```powershell
 build-tools/Release/bf3-resource-builder.exe `
-  --emit-hash-rules src/runtime/hash_rules_data.inc
+  --emit-hash-rules source/src/runtime/hash_rules_data.inc
 ```
 
 The checked-in table keeps a runtime-only build independent of private game files
@@ -91,6 +113,11 @@ binary. If distributing a newly rebuilt runtime, set that CMake cache value to
 its SHA256 before rebuilding the installer. Place the matching DLL under
 `BF3GamepadFix/runtime`, the default config under `BF3GamepadFix`, and the 38 XOR
 patch files under `BF3GamepadFix/patches`, beside `BF3GamepadFix.exe`.
+
+Use `source/BF3Controller.ini` as the package's default config. Copy
+`docs/THIRD_PARTY_NOTICES.md` and the `docs/licenses/` directory to the package
+root, keeping the notices' relative `licenses/` links valid. The packaged file
+layout and the installed config path remain the same.
 
 Each XOR patch has the stored resource's exact size and uses the filename
 `patched_file + ".xor"` from `release_0222.cpp`. Compute it from the supported
