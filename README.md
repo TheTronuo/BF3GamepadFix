@@ -15,11 +15,11 @@ Gamepad controls and Xbox 360 / PlayStation button prompts for the **Battlefield
 <table width="100%">
   <tr>
     <td width="50%" align="center">
-      <a href="assets/screenshots/xbox360-prompts.png"><img src="assets/screenshots/xbox360-prompts.png" alt="Battlefield 3 campaign with Xbox 360 RT, LT and X button prompts" width="100%"></a>
+      <a href="https://raw.githubusercontent.com/tronuo0/BF3GamepadFix/main/assets/screenshots/xbox360-prompts.png" target="_blank" rel="noopener noreferrer"><img src="assets/screenshots/xbox360-prompts-preview.webp" alt="Battlefield 3 campaign with Xbox 360 RT, LT and X button prompts" width="100%"></a>
       <br><em>Xbox 360 Prompts</em>
     </td>
     <td width="50%" align="center">
-      <a href="assets/screenshots/playstation-prompts.png"><img src="assets/screenshots/playstation-prompts.png" alt="Battlefield 3 campaign with PlayStation 3 R2, L2 and Square button prompts" width="100%"></a>
+      <a href="https://raw.githubusercontent.com/tronuo0/BF3GamepadFix/main/assets/screenshots/playstation-prompts.png" target="_blank" rel="noopener noreferrer"><img src="assets/screenshots/playstation-prompts-preview.webp" alt="Battlefield 3 campaign with PlayStation 3 R2, L2 and Square button prompts" width="100%"></a>
       <br><em>PlayStation 3 Prompts</em>
     </td>
   </tr>
